@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology/002</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background: linear-gradient(135deg, #6e48aa, #9d50bb);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            text-decoration: none;
+            color: #6e48aa;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        nav a:hover, nav a.active {
+            background-color: #6e48aa;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .content-section {
+            display: none;
+            padding: 20px;
+        }
+        .content-section.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Technology/002</h1>
+    </header>
+    
+    <nav>
+        <a href="#" class="nav-link active" data-section="home">Home</a>
+        <a href="#" class="nav-link" data-section="syllabus">Syllabus</a>
+        <a href="#" class="nav-link" data-section="textbooks">Textbooks</a>
+        <a href="#" class="nav-link" data-section="theory">Theory Notes</a>
+        <a href="#" class="nav-link" data-section="lab">Lab Manual</a>
+        <a href="#" class="nav-link" data-section="references">Reference Links</a>
+    </nav>
+    
+    <div class="container">
+        <!-- Home Section -->
+        <div id="home" class="content-section active">
+            <h2>Welcome to Web Technology/002</h2>
+            <p>Click on the navigation links above to access different course materials.</p>
+        </div>
+        
+        <!-- Syllabus Section -->
+        <div id="syllabus" class="content-section">
+            <h2>Syllabus</h2>
+            <h3>Course Objectives</h3>
+            <ul>
+                <li>Understand web technologies</li>
+                <li>Develop responsive websites</li>
+                <li>Learn client-server architecture</li>
+            </ul>
+        </div>
+        
+        <!-- Textbooks Section -->
+        <div id="textbooks" class="content-section">
+            <h2>Textbooks</h2>
+            <div class="textbook">
+                <h3>Web Development and Design Foundations</h3>
+                <p>Author: Terry Felke-Morris</p>
+            </div>
+        </div>
+        
+        <!-- Theory Notes Section -->
+        <div id="theory" class="content-section">
+            <h2>Theory Notes</h2>
+            <div class="chapter">
+                <h3>Chapter 1: Introduction to Web Technologies</h3>
+                <ul>
+                    <li>Evolution of the Web</li>
+                    <li>HTTP protocols</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Lab Manual Section -->
+        <div id="lab" class="content-section">
+            <h2>Lab Manual</h2>
+            <div class="experiment">
+                <h3>Experiment 1: Basic HTML Page</h3>
+                <ol>
+                    <li>Create HTML structure</li>
+                    <li>Add headings and paragraphs</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- Reference Links Section -->
+        <div id="references" class="content-section">
+            <h2>Reference Links</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+                <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2023 Web Technology/002
+    </footer>
+
+    <script>
+        // Handle navigation clicks
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Hide all sections
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show selected section
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+ 
