@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology/002</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #6e48aa, #9d50bb);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #6e48aa;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #6e48aa;
+            color: white;
+        }
+        
+        /* Collapsible Sections */
+        .section {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section-header {
+            padding: 15px 20px;
+            background: #6e48aa;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-header h2 {
+            font-size: 1.2rem;
+        }
+        .section-header .toggle {
+            font-size: 1.5rem;
+        }
+        .section-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .section-content-inner {
+            padding: 20px;
+        }
+        .section.active .section-content {
+            max-height: 5000px; /* Adjust based on content */
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Web Technology/002</h1>
+            <p>Click on any section to view content</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link" data-section="syllabus">Syllabus</a></li>
+                <li><a href="#" class="nav-link" data-section="textbooks">Textbooks</a></li>
+                <li><a href="#" class="nav-link" data-section="theory">Theory Notes</a></li>
+                <li><a href="#" class="nav-link" data-section="lab">Lab Manual</a></li>
+                <li><a href="#" class="nav-link" data-section="references">Reference Links</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Syllabus Section -->
+        <div class="section" id="syllabus">
+            <div class="section-header">
+                <h2>Syllabus</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <div class="section-content-inner">
+                    <h3>Course Objectives</h3>
+                    <ul>
+                        <li>Understand fundamental web technologies</li>
+                        <li>Develop responsive web applications</li>
+                        <li>Implement client-server architecture</li>
+                    </ul>
+                    
+                    <h3>Topics Covered</h3>
+                    <ol>
+                        <li>HTML5 and CSS3</li>
+                        <li>JavaScript and DOM</li>
+                        <li>Responsive Design</li>
+                        <li>Server-side Programming</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Textbooks Section -->
+        <div class="section" id="textbooks">
+            <div class="section-header">
+                <h2>Textbooks</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <div class="section-content-inner">
+                    <div class="textbook">
+                        <h3>Web Development and Design Foundations</h3>
+                        <p><strong>Author:</strong> Terry Felke-Morris</p>
+                        <p>Comprehensive guide covering HTML5, CSS3, JavaScript.</p>
+                    </div>
+                    <div class="textbook">
+                        <h3>Eloquent JavaScript</h3>
+                        <p><strong>Author:</strong> Marijn Haverbeke</p>
+                        <p>Modern introduction to JavaScript programming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Theory Notes Section -->
+        <div class="section" id="theory">
+            <div class="section-header">
+                <h2>Theory Notes (10 Chapters)</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <div class="section-content-inner">
+                    <div class="chapter">
+                        <h3>Chapter 1: Introduction to Web Technologies</h3>
+                        <ul>
+                            <li>Evolution of the Web</li>
+                            <li>Client-Server Architecture</li>
+                            <li>HTTP/HTTPS Protocols</li>
+                        </ul>
+                    </div>
+                    <div class="chapter">
+                        <h3>Chapter 2: HTML5 Fundamentals</h3>
+                        <ul>
+                            <li>Structure of HTML Documents</li>
+                            <li>Semantic HTML5 Tags</li>
+                            <li>Forms and Input Types</li>
+                        </ul>
+                    </div>
+                    <!-- Add more chapters here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lab Manual Section -->
+        <div class="section" id="lab">
+            <div class="section-header">
+                <h2>Lab Manual</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <div class="section-content-inner">
+                    <div class="experiment">
+                        <h3>Experiment 1: Basic HTML Page</h3>
+                        <ol>
+                            <li>Create a simple HTML page</li>
+                            <li>Add headings and paragraphs</li>
+                            <li>Include images and links</li>
+                        </ol>
+                    </div>
+                    <div class="experiment">
+                        <h3>Experiment 2: CSS Styling</h3>
+                        <ol>
+                            <li>Create external CSS file</li>
+                            <li>Style headings and paragraphs</li>
+                            <li>Implement basic layout</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Reference Links Section -->
+        <div class="section" id="references">
+            <div class="section-header">
+                <h2>Reference Links</h2>
+                <span class="toggle">+</span>
+            </div>
+            <div class="section-content">
+                <div class="section-content-inner">
+                    <ul>
+                        <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+                        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                        <li><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a></li>
+                        <!-- Add more links here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle sections
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.parentElement;
+                section.classList.toggle('active');
+                const toggle = header.querySelector('.toggle');
+                toggle.textContent = section.classList.contains('active') ? '−' : '+';
+                
+                // Close other sections
+                document.querySelectorAll('.section').forEach(s => {
+                    if (s !== section && s.classList.contains('active')) {
+                        s.classList.remove('active');
+                        s.querySelector('.toggle').textContent = '+';
+                    }
+                });
+            });
+        });
+        
+        // Navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                
+                // If section is already open, close it
+                if (section.classList.contains('active')) {
+                    section.classList.remove('active');
+                    section.querySelector('.toggle').textContent = '+';
+                } else {
+                    // Close all sections first
+                    document.querySelectorAll('.section').forEach(s => {
+                        s.classList.remove('active');
+                        s.querySelector('.toggle').textContent = '+';
+                    });
+                    
+                    // Open selected section
+                    section.classList.add('active');
+                    section.querySelector('.toggle').textContent = '−';
+                    
+                    // Scroll to section
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+ 
